@@ -99,7 +99,7 @@ export default function Home() {
       <div className={styles.content}>
         <div className={styles.imageContainer}>
           <Image
-            src="/images/snoopy3.jpg"
+            src="/valentines-day/images/snoopy3.jpg"
             alt="Snoopy and female Snoopy in romantic style"
             width={400}
             height={300}

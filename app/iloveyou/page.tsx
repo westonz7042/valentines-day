@@ -17,7 +17,7 @@ export default function ILoveYou() {
         <div className={styles.imageContainer}>
           {!imageError ? (
             <Image
-              src="/images/snoopy4.jpg"
+              src="/valentines-day/images/snoopy4.jpg"
               alt="Placeholder image - replace with your own"
               width={500}
               height={400}

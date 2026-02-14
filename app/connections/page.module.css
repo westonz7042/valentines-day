@@ -1,0 +1,282 @@
+.container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.title {
+  font-family: "Outfit", sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #8b1538;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.foundGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.foundGroups h2 {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.5rem;
+  color: #8b1538;
+  margin-bottom: 10px;
+}
+
+.foundGroup {
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.groupName {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.groupItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.groupItem {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+.gameArea {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.itemsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.itemButton {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.itemButton:hover:not(:disabled) {
+  border-color: #8b1538;
+  background: #fff5f7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(139, 21, 56, 0.2);
+}
+
+.itemButton.selected {
+  border-color: #8b1538;
+  background: #ff6b9d;
+  color: white;
+  transform: scale(1.05);
+}
+
+.itemButton.found {
+  opacity: 0.5;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.selectionArea {
+  background: #fff5f7;
+  border: 2px dashed #ff6b9d;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.selectionText {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #8b1538;
+  margin-bottom: 10px;
+}
+
+.selectedItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.selectedItem {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.9rem;
+  background: #ff6b9d;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.submitButton {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff1744 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 23, 68, 0.3);
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 23, 68, 0.4);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.secretCode {
+  background: linear-gradient(135deg, #ff6b9d 0%, #ff1744 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(255, 23, 68, 0.3);
+  animation: fadeIn 0.5s ease-in;
+}
+
+.secretCode h2 {
+  font-family: "Outfit", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.secretCode p {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.codeDisplay {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.codeLabel {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.codeValue {
+  font-family: "Outfit", monospace;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.backButton {
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 30px;
+  background: white;
+  color: #8b1538;
+  border: 2px solid #8b1538;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+}
+
+.backButton:hover {
+  background: #8b1538;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .itemsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .itemButton {
+    font-size: 0.9rem;
+    padding: 12px 15px;
+  }
+}

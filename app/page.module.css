@@ -1,0 +1,258 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: visible;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #ffeef7 0%, #fff0f5 100%);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #8b1538;
+  text-align: center;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.yesButtonWrapper {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+  overflow: visible;
+}
+
+.yesButton {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  color: white;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.4),
+    0 0 0 4px rgba(255, 255, 255, 0.8);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yesButtonSvg {
+  width: 200px;
+  height: 80px;
+  position: absolute;
+  top: 45px;
+  left: -40px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.yesButtonText {
+  font-size: 28px;
+  font-weight: 900;
+  font-family: "Outfit", sans-serif;
+  fill: #ff1744;
+  stroke: #cc0033;
+  stroke-width: 0.5px;
+  paint-order: stroke fill;
+}
+
+.yesButton {
+  transform: scale(var(--scale, 1));
+}
+
+.yesButton.shaking {
+  animation: shake var(--shake-duration, 0.3s) infinite ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: scale(var(--scale, 1)) translateX(0) translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: scale(var(--scale, 1)) translateX(-1px) translateY(-0.5px)
+      rotate(-0.5deg);
+  }
+  50% {
+    transform: scale(var(--scale, 1)) translateX(0) translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: scale(var(--scale, 1)) translateX(1px) translateY(0.5px)
+      rotate(0.5deg);
+  }
+}
+
+.yesButton:hover:not(.shaking) {
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.5),
+    0 0 0 5px rgba(255, 255, 255, 0.9);
+  transform: scale(calc(var(--scale, 1) * 1.05));
+}
+
+.yesButton:active {
+  transform: scale(calc(var(--scale, 1) * 0.95));
+}
+
+/* Fire effect */
+.yesButtonWrapper.onFire::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 35px;
+  background: radial-gradient(
+    ellipse at bottom,
+    rgba(255, 100, 0, 0.8) 0%,
+    rgba(255, 200, 0, 0.6) 30%,
+    rgba(255, 150, 0, 0.4) 60%,
+    transparent 100%
+  );
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: fire 0.3s infinite alternate;
+  z-index: 1;
+}
+
+.yesButtonWrapper.onFire::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 45px;
+  background: radial-gradient(
+    ellipse at bottom,
+    rgba(255, 200, 0, 0.6) 0%,
+    rgba(255, 100, 0, 0.4) 40%,
+    rgba(255, 50, 0, 0.2) 70%,
+    transparent 100%
+  );
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: fire 0.4s infinite alternate-reverse;
+  z-index: 0;
+}
+
+@keyframes fire {
+  0% {
+    transform: translateX(-50%) scaleX(1) scaleY(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(-50%) scaleX(1.1) scaleY(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) scaleX(0.9) scaleY(0.8);
+    opacity: 0.7;
+  }
+}
+
+/* Additional fire particles */
+.yesButtonWrapper.onFire {
+  position: relative;
+}
+
+.yesButtonWrapper.onFire::before {
+  box-shadow:
+    -10px 0 10px rgba(255, 100, 0, 0.5),
+    10px 0 10px rgba(255, 200, 0, 0.5),
+    -5px -5px 8px rgba(255, 150, 0, 0.4),
+    5px -5px 8px rgba(255, 100, 0, 0.4);
+}
+
+.noButton {
+  background: linear-gradient(135deg, #e0e0e0 0%, #bdbdbd 100%);
+  color: #666;
+  border: none;
+  padding: 18px 50px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 120px;
+}
+
+.noButton:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.noButton:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .yesButton,
+  .noButton {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+  }
+
+  .buttonContainer {
+    gap: 20px;
+  }
+
+  .imageContainer {
+    max-width: 100%;
+    height: 250px;
+  }
+}

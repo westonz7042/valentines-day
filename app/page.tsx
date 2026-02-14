@@ -126,7 +126,7 @@ export default function Home() {
                   "--scale": yesScale.toString(),
                   "--shake-duration":
                     noClicks > 0 ? `${getShakeIntensity(noClicks)}s` : "0s",
-                  backgroundImage: `url(/images/snoopy5.jpg)`,
+                  backgroundImage: `url(/valentines-day/images/snoopy5.jpg)`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 } as React.CSSProperties & {
